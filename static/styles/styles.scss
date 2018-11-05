@@ -1,0 +1,15 @@
+---
+# Main Stylesheet
+---
+
+
+// import variables and _data
+$site-baseurl: "{{ site.baseurl }}";
+$static-root: "{{ site.data.static.root }}";
+$static-fonts: {% include helpers/to_sass.fn maps=site.data.static.fonts %};
+
+// import styles
+@import "mixins/all.scss",
+        "base/all.scss",
+        "layout/all.scss",
+        "modules/all.scss";

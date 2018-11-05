@@ -1,0 +1,50 @@
+{%- comment -%}
+    Blank j-card template
+
+    Parameters:
+        cover:  cover image path
+    Requires:
+        var:    site.baseurl
+        data:   site.data.static.root           # static asset root
+        data:   site.data.static.images.cover   # cover metadata
+		data:   site.data.static.images.cover2  # cover2 metadata
+{%- endcomment -%}
+
+
+{%- assign static = site.data.static -%}
+{%- assign cover = include.cover | default: static.images.cover -%}
+
+<div class="template printable">
+    <div class="template-boundaries">
+        <div class="template-bleed printable-bleed"></div>
+        <div class="template-crop printable-crop"></div>
+    </div>
+    <div class="template-fold-1 printable-fold"></div>
+    <div class="template-fold-2 printable-fold"></div>
+
+    <div class="template-back">
+        <div class="template-side-a"></div>
+        <div class="template-side-b"></div>
+    </div>
+
+    <div class="template-spine">
+        <div class="template-spine-title-group">
+            <div class="template-spine-title"></div>
+            <div class="template-spine-subtitle"></div>
+        </div>
+        <div class="template-note-group">
+            <div class="template-note-upper"></div>
+            <div class="template-note-lower"></div>
+        </div>
+    </div>
+
+    <div class="template-front">
+        <img class="template-cover" src="{{ site.baseurl }}{{ static.root }}{{ cover }}" alt="Cover image" />
+       <div class="template-front-group">
+            <div class="template-front-title-group">
+                <div class="template-front-title"></div>
+                <div class="template-front-subtitle"></div>
+            </div>
+         </div>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+// Evenly sized columns
+
+
+.columns {
+    display: flex;
+    flex-flow: row nowrap;
+
+    &-column { flex: 1 1 0%; }
+    &-column-2 { flex: 2 1 0%; }
+}

@@ -1,0 +1,29 @@
+// Printable j-card template with controls
+//
+// Requires:
+//    base/config.scss
+
+
+.jcard {
+    // center immediate children
+    text-align: center;
+    &-preview, &-duplicate, &-controls { text-align: initial; }
+
+    &-preview {
+        display: inline-block;
+        margin-bottom: $text-wide-gap;
+    }
+    &-duplicate { display: none; }
+
+    @media print {
+        text-align: initial;
+
+        &-preview { margin-bottom: $text-narrow-gap; }
+        &-controls { display: none; }
+
+        // show duplicate when .print-2 is set
+        &.print-2 &-duplicate {
+            display: inline-block;
+        }
+    }
+}

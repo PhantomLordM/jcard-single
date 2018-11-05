@@ -1,0 +1,170 @@
+// Blank j-card template
+
+
+// dimensions
+$template-height: 10.25cm;
+$template-back-width: 1in;
+$template-short-back-width: 0.6in;
+$template-spine-width: 0.5in;
+$template-front-width: 6.65cm;
+$template-panel-medium-padding: 0.15in;
+$template-panel-small-padding: 0.05in;
+
+// side labels
+$template-side-a-text: "Side A";
+$template-side-b-text: "Side B";
+$template-side-sep: ":";
+
+// text
+$template-line-height: 1.3;
+$template-track-line-height: 1.2;
+
+.template {
+    $template-width: $template-back-width + $template-spine-width + $template-front-width;
+    $template-fold-1-pos: $template-back-width;
+    $template-fold-2-pos: $template-back-width + $template-spine-width;
+
+    width: $template-width;
+    height: $template-height;
+    line-height: $template-line-height;
+
+    // crop and bleed boundaries
+    &-boundaries {
+        position: absolute;
+        top: 0; bottom: 0;
+        left: 0; right: 0;
+        background-color: inherit;
+    }
+
+    // fold markers
+    &-fold-1 { left: $template-fold-1-pos; }
+    &-fold-2 { left: $template-fold-2-pos; }
+
+    // common
+    &-front-title-group, &-spine-title-group  {
+        font-weight: bold;
+        white-space: wrap;
+    }
+
+    // back
+    &-back {
+        position: absolute;
+
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+
+        width: $template-height;
+        height: $template-back-width;
+
+        transform-origin: bottom left;
+        transform:
+            translateY(-$template-back-width)
+            rotate(90deg);
+
+        text-align: center;
+    }
+    &-side-a { margin: 0 $template-panel-medium-padding $text-narrow-gap; }
+    &-side-b { margin: 0 $template-panel-medium-padding; }
+    &-side-a:empty, &-side-b:empty { display: none; }
+
+    &-side-a::before, &-side-b::before {
+        font-weight: bold;
+        display: block;
+    }
+    &-side-a::before { content: $template-side-a-text; }
+    &-side-b::before { content: $template-side-b-text; }
+
+    // spine
+    &-spine {
+        $template-spine-pos: $template-back-width;
+
+        position: absolute;
+
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
+
+        width: $template-height;
+        height: $template-spine-width;
+
+        transform-origin: bottom left;
+        transform:
+            translate($template-spine-pos, -$template-spine-width)
+            rotate(90deg);
+    }
+    &-spine-title-group {
+        margin-left: $template-panel-medium-padding;
+    }
+    &-note-group {
+        margin-right: $template-panel-medium-padding;
+        text-align: right;
+    }
+
+    // front
+    &-front {
+        $template-front-pos: $template-back-width + $template-spine-width;
+
+        position: absolute;
+        left: $template-front-pos;
+
+        width: $template-front-width;
+        height: $template-height;
+    }
+    &-cover {
+        display: block;
+		margin-top: 0.25cm;
+		margin-bottom: 1.5cm;
+		margin-left: auto;
+		margin-right: auto;
+        width: 6cm;
+        height: 6cm;
+        object-fit: cover;
+    }
+    &-front-group {
+        $template-front-group-height: 1.2cm;
+        display: table-cell;
+        width: $template-front-width;
+		height: 1.2cm;
+		vertical-align: middle;
+		text-align: center;
+    }
+
+    &-tracks { line-height: $template-track-line-height; }
+
+    // short back
+    &.short-back &-boundaries {
+        left: $template-back-width - $template-short-back-width;
+    }
+    &.short-back &-back {
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
+
+        height: $template-short-back-width;
+        transform:
+            translateY(-$template-short-back-width)
+            rotate(90deg)
+            translateY($template-short-back-width - $template-back-width);
+
+        width: $template-height - $template-panel-medium-padding;
+        padding: 0 ($template-panel-medium-padding / 2);
+
+        text-align: left;
+    }
+    &.short-back &-side-a, &.short-back &-side-b {
+        flex: 1;
+        margin: 0 ($template-panel-medium-padding / 2);
+    }
+
+    &.short-back &-side-a::before, &.short-back &-side-b::before {
+        display: inline;
+        margin-right: $text-narrow-gap;
+    }
+    &.short-back &-side-a::before { content: $template-side-a-text + $template-side-sep; }
+    &.short-back &-side-b::before { content: $template-side-b-text + $template-side-sep; }
+
+    // force all caps
+    &.force-caps { text-transform: uppercase; }
+}

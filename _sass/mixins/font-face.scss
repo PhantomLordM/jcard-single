@@ -1,0 +1,12 @@
+// Font Face
+// Generate a font-face block.
+
+
+@mixin font-face($name, $path, $format, $style: normal, $weight: normal) {
+    @font-face {
+        font-family: $name;
+        src: url($path) format($format);
+        font-style: $style;
+        font-weight: $weight;
+    }
+}

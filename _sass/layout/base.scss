@@ -1,0 +1,33 @@
+// Base site layout
+//
+// Requires:
+//    base/config.scss
+
+
+.base {
+    margin: $text-medium-gap;
+
+    &-column {
+        width: $media-content-width;
+        margin: 0 auto;
+    }
+
+    &-header {
+        margin-bottom: $text-wide-gap;
+        padding-bottom: $text-medium-gap;
+        border-bottom: $sizes-line dashed $colors-fg-color;
+    }
+    &-footer {
+        margin-top: $text-wide-gap;
+        padding-top: $text-medium-gap;
+        border-top: $sizes-line dashed $colors-fg-color;
+    }
+
+    @media print {
+        &-column {
+            width: auto;
+            margin: 0;
+        }
+        &-header, &-footer { display: none; }
+    }
+}

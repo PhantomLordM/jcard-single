@@ -1,0 +1,88 @@
+// Printable area with bleed, crop marks, and fold marks
+// This module only contains CSS; usage is as follows:
+//
+// <div class="printable">
+//     <div class="printable-bleed"></div>
+//     <div class="printable-crop"></div>
+//     <div class="printable-fold"></div>
+//     ... printable content ...
+// </div>
+
+
+$printable-bleed-width: 0.1in;
+$printable-mark-length: 0.25in;
+$printable-mark-thickness: 1pt;
+
+.printable {
+    // new stacking context
+    position: relative;
+    z-index: 0;
+
+    margin: $printable-mark-length;
+    background-color: white;
+
+    // print exactly as displayed
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+
+    &-bleed {
+        position: absolute;
+        top: -$printable-bleed-width;
+        bottom: -$printable-bleed-width;
+        left: -$printable-bleed-width;
+        right: -$printable-bleed-width;
+        z-index: -2;
+
+        background-color: inherit;
+    }
+
+    // crop marks
+    &-crop {
+        position: absolute;
+        top: 0; bottom: 0;
+        left: 0; right: 0;
+
+        background-color: inherit;
+
+        &:before, &:after {
+            position: absolute;
+            z-index: -1;
+
+            content: '';
+            border: solid;
+        }
+        &:before {
+            top: -$printable-mark-length;
+            bottom: -$printable-mark-length;
+            left: 0; right: 0;
+            border-width: 0 $printable-mark-thickness;
+        }
+        &:after {
+            top: 0; bottom: 0;
+            left: -$printable-mark-length;
+            right: -$printable-mark-length;
+            border-width: $printable-mark-thickness 0;
+        }
+    }
+
+    &-fold {
+        position: absolute;
+        top: 0; bottom: 0;
+
+        width: $printable-mark-thickness;
+
+        &:before {
+            position: absolute;
+            top: -$printable-mark-length;
+            bottom: -$printable-mark-length;
+            left: -($printable-mark-thickness / 2);
+            right: 0;
+            z-index: -1;
+
+            content: '';
+
+            border: solid;
+            border-width: 0 0 0 $printable-mark-thickness;
+        }
+    }
+}

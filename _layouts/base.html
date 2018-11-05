@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    {% include modules/head.html %}
+    <body class="base">
+        <div class="base-column">
+            <header class="base-header">
+                {% include modules/header.html %}
+            </header>
+            {{ content }}
+            <footer class="base-footer">
+                {% include modules/footer.html %}
+            </footer>
+        </div>
+    </body>
+</html>

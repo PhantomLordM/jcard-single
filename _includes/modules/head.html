@@ -1,0 +1,23 @@
+{%- comment -%}
+    Site head containing metadata and imports
+
+    Requires:
+        var: site.baseurl
+        data: site.data.site.title      # site title
+        data: site.data.static.root     # static asset root
+        data: site.data.static.styles   # list of stylesheet paths
+        data: site.data.static.scripts  # list of javascript paths
+{%- endcomment -%}
+
+
+<head>
+    <title>{{ site.data.site.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=4.0" />
+    {% for style_path in site.data.static.styles %}
+    <link rel="stylesheet" type="text/css"
+        href="{{ site.baseurl }}{{ site.data.static.root }}{{ style_path }}"/>
+    {% endfor %}
+    {% for script_path in site.data.static.scripts %}
+    <script src="{{ site.baseurl }}{{ site.data.static.root }}{{ script_path }}"></script>
+    {% endfor %}
+</head>

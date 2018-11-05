@@ -1,0 +1,36 @@
+---
+layout: base
+---
+{%- comment -%}
+    Printable j-card template with controls
+
+    Parameters:
+        fields:             jcard template fields
+        fields.card_color:  background color
+        fields.text_color:  text and marker color
+        fields.cover:       cover image path
+		fields.cover2:      cover2 image path
+        fields.title:       front and spine title
+        fields.subtitle:    front and spine subtitle
+        fields.type: front  bottom text
+        fields.note_upper:  spine note upper
+        fields.note_lower:  spine note lower
+        fields.side_a:      list of side "A" tracks
+        fields.side_b:      list of side "B" tracks
+{%- endcomment -%}
+
+
+<div id="jcard" class="jcard">
+    <div class="jcard-preview">
+        {% include modules/template.html cover=fields.cover %}
+    </div>
+    <div class="jcard-duplicate"></div>
+    <div class="jcard-controls">
+        {% include modules/controls.html %}
+    </div>
+</div>
+<script>
+    (function() {
+        jcard.init('#jcard', {{ page.fields | jsonify }});
+    })();
+</script>

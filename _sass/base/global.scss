@@ -1,0 +1,93 @@
+// Global Styles
+//
+// Requires:
+//    base/config.scss
+//    mixins/font-family.scss
+//    variable: $site-baseurl
+//    variable: $static-root
+//    variable: $static-fonts
+
+
+/* fonts */
+@each $name, $font in $static-fonts {
+    $name: map-get($font, "name");
+    $path: $site-baseurl + $static-root + map-get($font, "path");
+    $format: map-get($font, "format");
+    $style: map-get($font, "style");
+    $style: normal !default;
+    $weight: map-get($font, "weight");
+    $weight: normal !default;
+
+    @include font-face($name, $path, $format, unquote($style), unquote($weight));
+}
+
+/* root */
+body {
+    font-family: $text-font-family;
+    line-height: 1;
+    color: $colors-fg-color;
+    background-color: $colors-bg-color;
+}
+
+/* headings */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    color: $colors-fg-color;
+}
+h1 { margin: 0; }
+h2, h3, h4, h5, h6 { margin: $text-wide-gap 0 $text-narrow-gap }
+h1 { font-size: $text-vv-large-size; }
+h2 { font-size: $text-v-large-size; }
+h3 { font-size: $text-large-size; }
+h4 { font-size: $text-medium-size; }
+h5 { font-size: $text-small-size; }
+h6 { font-size: $text-v-small-size; }
+
+/* text elements */
+p, span, ol, ul, pre, blockquote {
+    line-height: $text-line-height;
+}
+p, ol, ul, pre, blockquote {
+    margin-top: $text-medium-gap;
+    margin-bottom: $text-medium-gap;
+}
+ul, ol {
+    padding-left: $text-wide-gap;
+}
+blockquote {
+    margin-left: $text-wide-gap;
+    margin-right: $text-wide-gap;
+}
+hr {
+    border: none;
+    border-top: $sizes-line dashed $colors-accent-color;
+    margin: $text-narrow-gap 0;
+}
+
+/* links */
+a {
+    text-decoration: none;
+    color: $colors-contrast-color;
+
+    &:hover { text-decoration: underline; }
+}
+
+/* forms */
+fieldset {
+    border: $sizes-line solid $colors-accent-color;
+    margin: 0 0 $text-narrow-gap;
+    padding: $text-narrow-gap;
+}
+legend {
+    font-weight: bold;
+}
+input, select, textarea, button {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+}
+textarea, input[type=text], input[type=number] {
+    border: $sizes-line solid $colors-accent-color;
+}
+textarea, input[type=text] { padding: $text-space-gap; }
+input[type=number] { padding-left: $text-space-gap; }

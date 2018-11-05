@@ -1,0 +1,12 @@
+exclude:
+  - "*LICENSE"
+  - README.md
+
+sass:
+  style: compressed
+
+baseurl: /jcard-single
+
+# test server
+port: 8000
+host: 0.0.0.0

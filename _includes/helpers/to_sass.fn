@@ -1,0 +1,26 @@
+{%- comment -%}
+    Format a Liquid structure to SASS-compatible syntax.
+    A single level map is converted via the "map" argument.
+    A list of maps is converted to a map of maps via the "maps" argument.
+
+    Arguments:
+        map: a single map
+        maps: list of maps
+{%- endcomment -%}
+
+
+{%- assign self = "helpers/to_sass.fn" -%}
+
+{%- if include.map -%}
+    (
+    {%- for pair in map -%}
+        "{{ pair[0] }}": "{{ pair[1] }}",
+    {%- endfor -%}
+    )
+{%- else if include.maps -%}
+    (
+    {%- for map in include.maps -%}
+        "{{ forloop.index }}": {% include {{ self }} map=map %},
+    {%- endfor -%}
+    )
+{%- endif -%}

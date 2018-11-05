@@ -1,0 +1,19 @@
+root: /static
+
+styles: 
+  - /styles/styles.css
+
+scripts:
+  - /scripts/jcard.js
+
+fonts:
+  - name: Alte Haas Grotesk
+    path: /fonts/alte-haas-grotesk.ttf
+    format: truetype
+  - name: Alte Haas Grotesk
+    path: /fonts/alte-haas-grotesk-bold.ttf
+    format: truetype
+    weight: bold
+
+images:
+    cover: /images/cover.jpg

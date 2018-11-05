@@ -1,0 +1,18 @@
+// Reset
+// Fixes for browser quirks.
+
+
+body {
+    margin: 0;
+
+    /* prevent automatic font size adjustment */
+    text-size-adjust: 100%; 
+    -ms-text-size-adjust: 100%; 
+    -moz-text-size-adjust: 100%; 
+    -webkit-text-size-adjust: 100%;
+}
+
+img {
+    vertical-align: middle; /* more predictable default for inline images */
+    border-style: none; /* remove image link borders in IE */
+}

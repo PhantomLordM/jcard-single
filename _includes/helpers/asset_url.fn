@@ -1,0 +1,22 @@
+{%- comment -%}
+    Generate the root-relative path of a page or collection document's asset.
+
+    Arguments:
+        document: document to locate asset for (default is page)
+        filename: filename of the asset in the document's asset directory
+    Requires:
+        site.data.assets.root: asset root path
+{%- endcomment -%}
+
+
+{%- assign document = include.document | default: page -%}
+{%- assign extless_url = document.url | split: '.' | first -%}
+{%- assign url_end = document.url | slice: -1 -%}
+
+{%- if url_end == '/' -%}
+    {%- assign sub_dir = extless_url | append: 'index' -%}
+{%- else -%}
+    {%- assign sub_dir = extless_url -%}
+{%- endif -%}
+
+{{- site.baseurl }}{{ site.data.assets.root }}{{ sub_dir }}/{{ include.filename -}}

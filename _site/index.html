@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>J-Card Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=4.0" />
+    
+    <link rel="stylesheet" type="text/css"
+        href="/jcard-single/static/styles/styles.css"/>
+    
+    
+    <script src="/jcard-single/static/scripts/jcard.js"></script>
+    
+</head>
+
+    <body class="base">
+        <div class="base-column">
+            <header class="base-header">
+                <div class="header">
+    <h1>J-Card Template</h1>
+    <span>Fill out the form below to update the template. Print this page from your browser when you are done.</span>
+</div>
+
+            </header>
+            <div id="jcard" class="jcard">
+    <div class="jcard-preview">
+        <div class="template printable">
+    <div class="template-boundaries">
+        <div class="template-bleed printable-bleed"></div>
+        <div class="template-crop printable-crop"></div>
+    </div>
+    <div class="template-fold-1 printable-fold"></div>
+    <div class="template-fold-2 printable-fold"></div>
+
+    <div class="template-back">
+        <div class="template-side-a"></div>
+        <div class="template-side-b"></div>
+    </div>
+
+    <div class="template-spine">
+        <div class="template-spine-title-group">
+            <div class="template-spine-title"></div>
+            <div class="template-spine-subtitle"></div>
+        </div>
+        <div class="template-note-group">
+            <div class="template-note-upper"></div>
+            <div class="template-note-lower"></div>
+        </div>
+    </div>
+
+    <div class="template-front">
+        <img class="template-cover" src="/jcard-single/static/images/cover.jpg" alt="Cover image" />
+       <div class="template-front-group">
+            <div class="template-front-title-group">
+                <div class="template-front-title"></div>
+                <div class="template-front-subtitle"></div>
+            </div>
+         </div>
+    </div>
+</div>
+
+    </div>
+    <div class="jcard-duplicate"></div>
+    <div class="jcard-controls">
+        <form id="controls" class="controls">
+    <fieldset>
+        <legend>Options</legend>
+        <div class="columns">
+            <div class="columns-column-2">
+                <div class="columns">
+                    <div class="columns-column">
+                        <div class="field">
+    <label class="field-label" for="controls-short-back">Short Back</label><input
+        id="controls-short-back"
+        class="field-input"
+        type="checkbox"
+    /></div>
+
+                    </div>
+                    <div class="columns-column">
+                        <div class="field">
+    <label class="field-label" for="controls-force-caps">Force CAPS</label><input
+        id="controls-force-caps"
+        class="field-input"
+        type="checkbox"
+        checked
+    /></div>
+
+                    </div>
+                    <div class="columns-column">
+                        <div class="field">
+    <label class="field-label" for="controls-print-2">Print 2</label><input
+        id="controls-print-2"
+        class="field-input"
+        type="checkbox"
+    /></div>
+
+                    </div>
+                </div>
+                <div class="field">
+    <label class="field-label" for="controls-cover">Cover</label><input
+        id="controls-cover"
+        class="field-input"
+        type="file"
+        accept="image/*"
+    /></div>
+
+				<div class="field">
+    <label class="field-label" for="controls-cover2">Cover2</label><input
+        id="controls-cover2"
+        class="field-input"
+        type="file"
+        accept="image/*"
+    /></div>
+
+            </div>
+            <div class="columns-column">
+                <div class="field">
+    <label class="field-label" for="controls-card-color">Card Color</label><input
+        id="controls-card-color"
+        class="field-input"
+        type="color"
+    /></div>
+
+                <div class="field">
+    <label class="field-label" for="controls-text-color">Text Color</label><input
+        id="controls-text-color"
+        class="field-input"
+        type="color"
+    /></div>
+
+            </div>
+        </div>
+        <hr/>
+        <div class="columns">
+            <div class="columns-column-2">
+                <div class="field">
+    <label class="field-label" for="controls-title">Album 1</label><input
+        id="controls-title"
+        class="field-input"
+        type="text"
+    /></div>
+
+                <div class="field">
+    <label class="field-label" for="controls-subtitle">Album 2</label><input
+        id="controls-subtitle"
+        class="field-input"
+        type="text"
+    /></div>
+
+            </div>
+            <div class="columns-column">
+                <div class="field">
+    <label class="field-label" for="controls-title-size">Title Size</label><input
+        id="controls-title-size"
+        class="field-input"
+        type="number"
+        min="0" step="0.1"
+    /></div>
+
+            </div>
+        </div>
+        <hr/>
+        <div class="columns">
+            <div class="columns-column-2">
+                <div class="field">
+    <label class="field-label" for="controls-type">Invisible Characters</label><input
+        id="controls-type"
+        class="field-input"
+        type="text"
+    /></div>
+
+            </div>
+            <div class="columns-column">
+                <div class="field">
+    <label class="field-label" for="controls-type-size">Type Size</label><input
+        id="controls-type-size"
+        class="field-input"
+        type="number"
+        min="0" step="0.1"
+    /></div>
+
+            </div>
+        </div>
+        <hr/>
+        <div class="columns">
+            <div class="columns-column-2">
+                <div class="field">
+    <label class="field-label" for="controls-note-upper">Deck</label><input
+        id="controls-note-upper"
+        class="field-input"
+        type="text"
+    /></div>
+
+                <div class="field">
+    <label class="field-label" for="controls-note-lower">Deck</label><input
+        id="controls-note-lower"
+        class="field-input"
+        type="text"
+    /></div>
+
+            </div>
+            <div class="columns-column">
+                <div class="field">
+    <label class="field-label" for="controls-note-size">Note Size</label><input
+        id="controls-note-size"
+        class="field-input"
+        type="number"
+        min="0" step="0.1"
+    /></div>
+
+            </div>
+        </div>
+        <hr/>
+        <div class="columns">
+            <div class="columns-column-2">
+                <div class="field">
+    <label class="field-label" for="controls-side-a"></label><textarea
+        id="controls-side-a"
+        class="field-textarea"
+    ></textarea></div>
+
+                <div class="field">
+    <label class="field-label" for="controls-side-b"></label><textarea
+        id="controls-side-b"
+        class="field-textarea"
+    ></textarea></div>
+ 
+            </div>
+            <div class="columns-column">
+                <div class="field">
+    <label class="field-label" for="controls-track-size"></label><input
+        id="controls-track-size"
+        class="field-input"
+        type="number"
+        min="0" step="0.1"
+    /></div>
+
+                <div class="field">
+    <label class="field-label" for="controls-back-size"></label><input
+        id="controls-back-size"
+        class="field-input"
+        type="number"
+        min="0" step="0.1"
+    /></div>
+
+            </div>
+        </div>
+    </fieldset>
+</form>
+
+    </div>
+</div>
+<script>
+    (function() {
+        jcard.init('#jcard', {"card_color":"#000000","text_color":"#ffffff"});
+    })();
+</script>
+
+            <footer class="base-footer">
+                <div class="footer">
+    <span>This template is free and <a href="https://gitlab.com/unixispower/jcard-template">open source</a> software.</span>
+</div>
+
+            </footer>
+        </div>
+    </body>
+</html>
