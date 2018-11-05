@@ -32,7 +32,7 @@
         <hr/>
         <div class="columns">
             <div class="columns-column-2">
-                {% include modules/field.html id="controls-title" type="text" label="Album 1" %}
+                {% include modules/field.html id="controls-title" type="text" label="Artist - Title" %}
                 {% include modules/field.html id="controls-subtitle" type="text" label="Album 2" %}
             </div>
             <div class="columns-column">
@@ -59,15 +59,5 @@
             </div>
         </div>
         <hr/>
-        <div class="columns">
-            <div class="columns-column-2">
-                {% include modules/field.html id="controls-side-a" type="textarea" label="" %}
-                {% include modules/field.html id="controls-side-b" type="textarea" label="" %} 
-            </div>
-            <div class="columns-column">
-                {% include modules/field.html id="controls-track-size" type="number" attrs='min="0" step="0.1"' label="" %}
-                {% include modules/field.html id="controls-back-size" type="number" attrs='min="0" step="0.1"' label="" %}
-            </div>
-        </div>
     </fieldset>
 </form>
