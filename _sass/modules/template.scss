@@ -2,11 +2,11 @@
 
 
 // dimensions
-$template-height: 10.25cm;
+$template-height: 10.50cm;
 $template-back-width: 1in;
 $template-short-back-width: 0.6in;
 $template-spine-width: 0.5in;
-$template-front-width: 6.65cm;
+$template-front-width: 12.15cm;
 $template-panel-medium-padding: 0.15in;
 $template-panel-small-padding: 0.05in;
 
@@ -116,8 +116,7 @@ $template-track-line-height: 1.2;
         display: block;
 		margin-top: 0.25cm;
 		margin-bottom: 1.5cm;
-		margin-left: auto;
-		margin-right: auto;
+		margin-left: 0.325;
         width: 6cm;
         height: 6cm;
         object-fit: cover;
@@ -125,11 +124,12 @@ $template-track-line-height: 1.2;
     &-front-group {
         $template-front-group-height: 1.2cm;
         display: table-cell;
-        width: $template-front-width;
+		margin-left: 0cm;
+        width: $template-front-width - 5.5cm;	
 		height: 1.2cm;
 		vertical-align: middle;
 		text-align: center;
-    }
+}
 
     &-tracks { line-height: $template-track-line-height; }
 
