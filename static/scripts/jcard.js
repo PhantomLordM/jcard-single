@@ -14,7 +14,7 @@ var jcard = (function() {
             textColor:  controls.querySelector('#controls-text-color'),
 
             title:      controls.querySelector('#controls-title'),
-            subtitle:   controls.querySelector('#controls-subtitle'),
+//            subtitle:   controls.querySelector('#controls-subtitle'),
             titleSize:  controls.querySelector('#controls-title-size'),
 
 //            type:       controls.querySelector('#controls-type'),
@@ -43,9 +43,9 @@ var jcard = (function() {
             titles:         [
                 template.querySelector('.template-front-title'),
                 template.querySelector('.template-spine-title')],    
-            subtitles:      [
-                template.querySelector('.template-front-subtitle'),
-                template.querySelector('.template-spine-subtitle')],
+//            subtitles:      [
+//                template.querySelector('.template-front-subtitle'),
+//                template.querySelector('.template-spine-subtitle')],
 //            tracks:         template.querySelector('.template-tracks'),
 //            type:           template.querySelector('.template-type'),
             noteGroup:      template.querySelector('.template-note-group'),
@@ -73,9 +73,9 @@ var jcard = (function() {
         outputs.titles.forEach(function(titleOutput) {
             addTextListener(inputs.title, titleOutput);
         });
-        outputs.subtitles.forEach(function(subtitleOutput) {
-            addTextListener(inputs.subtitle, subtitleOutput);
-        });
+//        outputs.subtitles.forEach(function(subtitleOutput) {
+//            addTextListener(inputs.subtitle, subtitleOutput);
+//        });
         outputs.titleGroups.forEach(function(groupOutput) {
             addSizeListener(inputs.titleSize, groupOutput);
         });
@@ -103,10 +103,10 @@ var jcard = (function() {
         inputs.textColor.value = fields.text_color || 'black';
 
         inputs.title.value = fields.title || '';
-        inputs.subtitle.value = fields.subtitle || '';
+//        inputs.subtitle.value = fields.subtitle || '';
         inputs.titleSize.value = fields.title_size || 8;
 
-//        inputs.type.value = fields.type || '               ';
+//        inputs.type.value = fields.type || '               ';
 //        inputs.typeSize.value = fields.type_size || 8;
 
         inputs.noteUpper.value = fields.note_upper || 'Kenwood';
