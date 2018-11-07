@@ -17,16 +17,16 @@ var jcard = (function() {
             subtitle:   controls.querySelector('#controls-subtitle'),
             titleSize:  controls.querySelector('#controls-title-size'),
 
-            type:       controls.querySelector('#controls-type'),
-            typeSize:   controls.querySelector('#controls-type-size'),
+//            type:       controls.querySelector('#controls-type'),
+//            typeSize:   controls.querySelector('#controls-type-size'),
 
             noteUpper:  controls.querySelector('#controls-note-upper'),
             noteLower:  controls.querySelector('#controls-note-lower'),
             noteSize:   controls.querySelector('#controls-note-size'),
 
-            sideA:      controls.querySelector('#controls-side-a'),
-            sideB:      controls.querySelector('#controls-side-b'),
-            trackSize:  controls.querySelector('#controls-track-size'),
+//            sideA:      controls.querySelector('#controls-side-a'),
+//            sideB:      controls.querySelector('#controls-side-b'),
+//            trackSize:  controls.querySelector('#controls-track-size'),
             backSize:   controls.querySelector('#controls-back-size')
         }
     }
@@ -46,8 +46,8 @@ var jcard = (function() {
             subtitles:      [
                 template.querySelector('.template-front-subtitle'),
                 template.querySelector('.template-spine-subtitle')],
-            tracks:         template.querySelector('.template-tracks'),
-            type:           template.querySelector('.template-type'),
+//            tracks:         template.querySelector('.template-tracks'),
+//            type:           template.querySelector('.template-type'),
             noteGroup:      template.querySelector('.template-note-group'),
             noteUpper:      template.querySelector('.template-note-upper'),
             noteLower:      template.querySelector('.template-note-lower'),
@@ -80,8 +80,8 @@ var jcard = (function() {
             addSizeListener(inputs.titleSize, groupOutput);
         });
 
-        addTextListener(inputs.type, outputs.type);
-        addSizeListener(inputs.typeSize, outputs.type);
+//        addTextListener(inputs.type, outputs.type);
+//        addSizeListener(inputs.typeSize, outputs.type);
 
         addTextListener(inputs.noteUpper, outputs.noteUpper);
         addTextListener(inputs.noteLower, outputs.noteLower);
@@ -89,8 +89,8 @@ var jcard = (function() {
 
         addSideListener(inputs.title, outputs.sideA);
         addSideListener(inputs.title, outputs.sideB);
-        addTracksListener([inputs.sideA, inputs.sideB], outputs.tracks);
-        addSizeListener(inputs.trackSize, outputs.tracks);
+//        addTracksListener([inputs.sideA, inputs.sideB], outputs.tracks);
+//        addSizeListener(inputs.trackSize, outputs.tracks);
         addSizeListener(inputs.backSize, outputs.sideA);
         addSizeListener(inputs.backSize, outputs.sideB);
     }
@@ -106,16 +106,16 @@ var jcard = (function() {
         inputs.subtitle.value = fields.subtitle || '';
         inputs.titleSize.value = fields.title_size || 8;
 
-        inputs.type.value = fields.type || '               ';
-        inputs.typeSize.value = fields.type_size || 8;
+//        inputs.type.value = fields.type || '               ';
+//        inputs.typeSize.value = fields.type_size || 8;
 
         inputs.noteUpper.value = fields.note_upper || 'Kenwood';
         inputs.noteLower.value = fields.note_lower || 'KX-9010';
         inputs.noteSize.value = fields.note_size || 8;
 
-        inputs.sideA.value = formatList(fields.side_a || []);
-        inputs.sideB.value = formatList(fields.side_b || []);
-        inputs.trackSize.value = fields.track_size || 9;
+//        inputs.sideA.value = formatList(fields.side_a || []);
+//        inputs.sideB.value = formatList(fields.side_b || []);
+//        inputs.trackSize.value = fields.track_size || 9;
         inputs.backSize.value = fields.back_size || 8;
     }
 
