@@ -11,6 +11,47 @@
         <legend>Options</legend>
         <div class="columns">
             <div class="columns-column-2">
+				{% include modules/field.html id="controls-cover" type="file" attrs='accept="image/*"' label="Cover" %}
+		<hr/>
+                {% include modules/field.html id="controls-title" type="text" label="Artist - Title" %}
+<!--                {% include modules/field.html id="controls-subtitle" type="text" label="" %}
+-->
+            </div>
+            
+        </div>
+
+        <div class="columns">
+            <div class="columns-column-2">
+				<div class="columns">
+					<div class="columns-column">
+						{% include modules/field.html id="controls-note-upper" type="text" label="Deck" %}
+					</div>
+					<div class="columns-column">
+						{% include modules/field.html id="controls-note-lower" type="text" label="Deck" %}
+					</div>
+				</div>			
+			</div>
+        </div>		
+        <hr/>
+		<hr/>
+		<div class="columns">
+			<div class="columns-column-2">
+				<div class="columns">
+					<div class="columns-column">
+						{% include modules/field.html id="controls-title-size" type="number" attrs='min="0" step="0.1"' label="Front Size" %}
+					</div>
+					<div class="columns-column">
+						{% include modules/field.html id="controls-back-size" type="number" attrs='min="0" step="0.1"' label="Back Size" %}
+					</div>
+					<div class="columns-column">
+						{% include modules/field.html id="controls-note-size" type="number" attrs='min="0" step="0.1"' label="Spine Size" %}
+					</div>
+				</div>	
+			</div>
+		</div>
+		<hr/>
+        <div class="columns">
+            <div class="columns-column-2">
                 <div class="columns">
                     <div class="columns-column">
                         {% include modules/field.html id="controls-short-back" type="checkbox" label="Short Back" %}
@@ -22,26 +63,23 @@
                         {% include modules/field.html id="controls-print-2" type="checkbox" label="Print 2" %}
                     </div>
                 </div>
-                {% include modules/field.html id="controls-cover" type="file" attrs='accept="image/*"' label="Cover" %}
+                
             </div>
-            <div class="columns-column">
-                {% include modules/field.html id="controls-card-color" type="color" label="Card Color" %}
-                {% include modules/field.html id="controls-text-color" type="color" label="Text Color" %}
-            </div>
-        </div>
-        <hr/>
-        <div class="columns">
+		</div>
+		<div class="columns">
             <div class="columns-column-2">
-                {% include modules/field.html id="controls-title" type="text" label="Artist - Title" %}
-<!--                {% include modules/field.html id="controls-subtitle" type="text" label="" %}
--->
-            </div>
-            <div class="columns-column">
-                {% include modules/field.html id="controls-title-size" type="number" attrs='min="0" step="0.1"' label="Title Size" %}
-                {% include modules/field.html id="controls-back-size" type="number" attrs='min="0" step="0.1"' label="Back Size" %}
-            </div>
-        </div>
-        <hr/>
+				<div class="columns">
+					<div class="columns-column">
+						{% include modules/field.html id="controls-card-color" type="color" label="Card Color" %}
+					</div>
+					<div class="columns-column">
+						{% include modules/field.html id="controls-text-color" type="color" label="Text Color" %}
+					</div>
+					<div class="columns-column">
+					</div>
+				</div>
+			</div>
+        </div>		
 <!--        <div class="columns">
             <div class="columns-column-2">
                 {% include modules/field.html id="controls-type" type="text" label="Invisible Characters" %}
@@ -52,15 +90,7 @@
         </div>
         <hr/>
 -->
-        <div class="columns">
-            <div class="columns-column-2">
-                {% include modules/field.html id="controls-note-upper" type="text" label="Deck" %}
-                {% include modules/field.html id="controls-note-lower" type="text" label="Deck" %}
-            </div>
-            <div class="columns-column">
-                {% include modules/field.html id="controls-note-size" type="number" attrs='min="0" step="0.1"' label="Note Size" %}
-            </div>
-        </div>
+
 <!--        <hr/>
         <div class="columns">
             <div class="columns-column-2">
