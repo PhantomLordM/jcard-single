@@ -39,7 +39,7 @@ var jcard = (function() {
             cover:          template.querySelector('.template-cover'),
             titleGroups:    [
                 template.querySelector('.template-front-title-group'),
-                template.querySelector('.template-spine-title-group')],
+//                template.querySelector('.template-spine-title-group')],
             titles:         [
                 template.querySelector('.template-front-title'),
                 template.querySelector('.template-spine-title')],    
@@ -52,7 +52,8 @@ var jcard = (function() {
             noteUpper:      template.querySelector('.template-note-upper'),
             noteLower:      template.querySelector('.template-note-lower'),
             sideA:          template.querySelector('.template-side-a'),
-            sideB:          template.querySelector('.template-side-b')
+            sideB:          template.querySelector('.template-side-b'),
+            sPine:			template.querySelector('.template-spine-title-group')
         }
     }
 
@@ -86,6 +87,7 @@ var jcard = (function() {
         addTextListener(inputs.noteUpper, outputs.noteUpper);
         addTextListener(inputs.noteLower, outputs.noteLower);
         addSizeListener(inputs.noteSize, outputs.noteGroup);
+        addSizeListener(inputs.noteSize, outputs.sPine);
 
         addSideListener(inputs.title, outputs.sideA);
         addSideListener(inputs.title, outputs.sideB);
