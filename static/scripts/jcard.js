@@ -38,7 +38,7 @@ var jcard = (function() {
             boundaries:     template.querySelector('.template-boundaries'),
             cover:          template.querySelector('.template-cover'),
             titleGroups:    [
-                template.querySelector('.template-front-title-group'),
+                template.querySelector('.template-front-title-group')],
 //                template.querySelector('.template-spine-title-group')],
             titles:         [
                 template.querySelector('.template-front-title'),
@@ -53,7 +53,7 @@ var jcard = (function() {
             noteLower:      template.querySelector('.template-note-lower'),
             sideA:          template.querySelector('.template-side-a'),
             sideB:          template.querySelector('.template-side-b'),
-            sPine:			template.querySelector('.template-spine-title-group')
+            sPine:          template.querySelector('.template-spine-title-group')
         }
     }
 
