@@ -106,7 +106,7 @@ var jcard = (function() {
 
         inputs.title.value = fields.title || '';
 //        inputs.subtitle.value = fields.subtitle || '';
-        inputs.titleSize.value = fields.title_size || 8;
+        inputs.titleSize.value = fields.title_size || 10;
 
 //        inputs.type.value = fields.type || '               ';
 //        inputs.typeSize.value = fields.type_size || 8;
