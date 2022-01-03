@@ -109,8 +109,8 @@ var jcard = (function() {
         inputs.type.value = fields.type || '               ';
         inputs.typeSize.value = fields.type_size || 8;
 
-        inputs.noteUpper.value = fields.note_upper || 'Kenwood';
-        inputs.noteLower.value = fields.note_lower || 'KX-9010';
+        inputs.noteUpper.value = fields.note_upper || 'Nakamichi';
+        inputs.noteLower.value = fields.note_lower || 'LX-5';
         inputs.noteSize.value = fields.note_size || 8;
 
         inputs.sideA.value = formatList(fields.side_a || []);
